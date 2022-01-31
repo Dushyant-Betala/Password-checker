@@ -2,8 +2,8 @@ import hashlib
 import requests
 import sys
 
-#This send the password to the Api at pwned password and request Data, the query caharacter consists of the first 5 characters of the hash code
-
+#This send the password to the Api at pwned password and request Data, the query caharacter consists of the first 5 characters of the hashcode of the password inorder to have privacy
+#this function returns a list of password with the same first 5 character of SHA-1 hash code as that of the password given 
 def request_api_data(query_char):
     url= 'https://api.pwnedpasswords.com/range/' + query_char
     res= requests.get(url)
