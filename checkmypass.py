@@ -19,7 +19,9 @@ def get_password_leaks_count (hashes, hash_to_check):
             return count
     return 0
         
-
+    
+# This function first converts the user entered password into SHA-1 code and then converts that into a Hexa Decimal value with upper case characters.
+#Then it spltis the password into 2 parts first containing the first 5 character and the other containing the remaining characters
 def pwned_api_check(password):
     sha1password = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
     first5_char, tail = sha1password[:5], sha1password[5:]
